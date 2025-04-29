@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="limo_ur5e">
+  <group name="arm">
+    <joint name="base_to_ur5e"/>
+    <joint name="ur5e_to_gripper"/>
+  </group>
+
+  <end_effector name="gripper" parent_link="gripper_link" group="arm"/>
+</robot>

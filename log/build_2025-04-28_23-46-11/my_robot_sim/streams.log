@@ -1,0 +1,16 @@
+[1.776s] Invoking command in '/home/ismail01/ros2_ws/build/my_robot_sim': PYTHONPATH=/home/ismail01/ros2_ws/build/my_robot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ismail01/ros2_ws/install/my_robot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ismail01/ros2_ws/build/my_robot_sim/build --no-deps symlink_data
+[2.382s] running develop
+[2.821s] running egg_info
+[2.821s] writing my_robot_sim.egg-info/PKG-INFO
+[2.823s] writing dependency_links to my_robot_sim.egg-info/dependency_links.txt
+[2.824s] writing entry points to my_robot_sim.egg-info/entry_points.txt
+[2.826s] writing requirements to my_robot_sim.egg-info/requires.txt
+[2.826s] writing top-level names to my_robot_sim.egg-info/top_level.txt
+[2.831s] reading manifest file 'my_robot_sim.egg-info/SOURCES.txt'
+[2.834s] writing manifest file 'my_robot_sim.egg-info/SOURCES.txt'
+[2.838s] running build_ext
+[2.839s] Creating /home/ismail01/ros2_ws/install/my_robot_sim/lib/python3.10/site-packages/my-robot-sim.egg-link (link to .)
+[2.842s] 
+[2.842s] Installed /home/ismail01/ros2_ws/build/my_robot_sim
+[2.843s] running symlink_data
+[2.959s] Invoked command in '/home/ismail01/ros2_ws/build/my_robot_sim' returned '0': PYTHONPATH=/home/ismail01/ros2_ws/build/my_robot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ismail01/ros2_ws/install/my_robot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ismail01/ros2_ws/build/my_robot_sim/build --no-deps symlink_data

@@ -1,0 +1,1 @@
+/home/ismail01/ros2_ws/build/my_robot_sim/launch/moveit.launch.py

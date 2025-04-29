@@ -1,0 +1,1 @@
+/home/ismail01/ros2_ws/src/my_robot_sim/launch/nav2.launch.py

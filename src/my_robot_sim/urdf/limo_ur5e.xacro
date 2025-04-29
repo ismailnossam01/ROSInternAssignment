@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<robot name="limo_ur5e" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.6 0.4 0.2"/>
+      </geometry>
+      <origin xyz="0 0 0.1"/>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Wheels -->
+  <xacro:macro name="wheel" params="name x y">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <cylinder radius="0.08" length="0.05"/>
+        </geometry>
+        <origin xyz="${x} ${y} 0.05" rpy="1.57 0 0"/>
+        <material name="gray">
+          <color rgba="0.5 0.5 0.5 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${name}_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="${name}"/>
+      <origin xyz="${x} ${y} 0.05" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:wheel name="front_left_wheel"  x="0.25"  y="0.2"/>
+  <xacro:wheel name="front_right_wheel" x="0.25"  y="-0.2"/>
+  <xacro:wheel name="rear_left_wheel"   x="-0.25" y="0.2"/>
+  <xacro:wheel name="rear_right_wheel"  x="-0.25" y="-0.2"/>
+
+  <!-- UR5e Arm Base -->
+  <link name="ur5e_base_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.2"/>
+      </geometry>
+      <origin xyz="0 0 0.3"/>
+      <material name="silver">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_ur5e" type="fixed">
+    <parent link="base_link"/>
+    <child link="ur5e_base_link"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Simple Gripper -->
+  <link name="gripper_link">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <origin xyz="0 0 0.6"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="ur5e_to_gripper" type="fixed">
+    <parent link="ur5e_base_link"/>
+    <child link="gripper_link"/>
+    <origin xyz="0 0 0.4" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ros2_control -->
+  <ros2_control name="DiffBotSystem" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+
+    <joint name="front_left_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="front_right_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_left_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_right_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+  </ros2_control>
+
+</robot>

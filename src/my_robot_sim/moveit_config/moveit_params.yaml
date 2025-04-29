@@ -1,0 +1,11 @@
+move_group:
+  ros__parameters:
+    allow_trajectory_execution: true
+    planning_pipeline: ompl
+    planning_scene_monitor_options:
+      name: planning_scene_monitor
+      robot_description: robot_description
+      publish_planning_scene: true
+      publish_geometry_updates: true
+      publish_state_updates: true
+      publish_transforms_updates: true
