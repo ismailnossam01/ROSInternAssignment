@@ -111,7 +111,7 @@ ros2 launch my_robot_sim gazebo.launch.py
 ```
 
 ---
-
+Here is the Diagram of the SIMULATION:
 ![Simulation of 4-Wheeled Robot + UR5e Arm](https://github.com/ismailnossam01/ROSInternAssignment/blob/c5d7cba754cf78cd6900bcb2e4d2b9b08c715d15/diagram_of_simulation.png)
 
 
